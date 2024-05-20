@@ -1,5 +1,5 @@
 import { StyleSheet, SafeAreaView} from 'react-native';
-import CarouselCards from '../Components/CarouselCards'
+import CarouselCards from '../Components/CarouselCard/CarouselCards'
 
 export default function HomeScreen() {
   return (

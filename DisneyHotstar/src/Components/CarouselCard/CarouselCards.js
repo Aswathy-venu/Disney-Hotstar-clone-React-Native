@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from "react-native"
+import { View ,StyleSheet} from "react-native"
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from './CarouselCardItem'
 import data from './data'
@@ -9,17 +9,20 @@ const CarouselCards = () => {
   const isCarousel = React.useRef(null)
 
   return (
-    <View>
+    <View style={styles.container}>
       <Carousel
-        layout="tinder"
         layoutCardOffset={9}
         ref={isCarousel}
         data={data}
-        renderItem={CarouselCardItem}
+        renderItem={CarouselCardItem}//for display the Carousel card items
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
         onSnapToItem={(index) => setIndex(index)}
         useScrollView={true}
+        autoplay={true} 
+        autoplayDelay={1000}  
+        autoplayInterval={3000}  
+        loop={true} 
       />
       <Pagination
         dotsLength={data.length}
@@ -30,14 +33,28 @@ const CarouselCards = () => {
           height: 10,
           borderRadius: 5,
           marginHorizontal: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.92)'
+          backgroundColor: 'white',
+          marginBottom:500,
         }}
-        inactiveDotOpacity={0.4}
+        inactiveDotOpacity={0.3}
         inactiveDotScale={0.6}
         tappableDots={true}
+        containerStyle={{
+          backgroundColor: 'black', 
+          paddingVertical: 10,
+        
+        }}
       />
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    backgroundColor: 'black',
+  },
+});
+
 
 export default CarouselCards
