@@ -1,5 +1,5 @@
 import React from 'react'
-import { View ,StyleSheet} from "react-native"
+import { View ,StyleSheet, Dimensions} from "react-native"
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from './CarouselCardItem'
 import data from './data'
@@ -18,10 +18,11 @@ const CarouselCards = () => {
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
         onSnapToItem={(index) => setIndex(index)}
-        useScrollView={true}
+        useScrollView={false}
         autoplay={true} 
         autoplayDelay={1000}  
         autoplayInterval={3000}  
+        sliderHeight={100}
         loop={true} 
       />
       <Pagination
@@ -34,7 +35,8 @@ const CarouselCards = () => {
           borderRadius: 5,
           marginHorizontal: 0,
           backgroundColor: 'white',
-          marginBottom:450,
+       
+          
         }}
         inactiveDotOpacity={0.3}
         inactiveDotScale={0.6}
@@ -42,17 +44,19 @@ const CarouselCards = () => {
         containerStyle={{
           backgroundColor: 'black', 
           paddingVertical: 10,
+          height:"auto"
         
         }}
       />
+ 
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     backgroundColor: 'black',
+    height:Dimensions.get('screen').height*0.49
   },
 });
 

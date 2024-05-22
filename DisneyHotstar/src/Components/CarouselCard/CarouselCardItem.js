@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
     borderRadius: 8,
-    width: ITEM_WIDTH,
-    height: ITEM_HEIGHT,
+    // width: ITEM_WIDTH,
+    height:400,
   },
   imageContainer: {
-    position: 'relative',
+    // position: 'relative',
   },
   bgimage: {
     width: ITEM_WIDTH,
@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height:80, 
-    marginTop:230,
+    bottom:0,
+    // marginTop:230,
     resizeMode: 'contain',
   },
   body: {

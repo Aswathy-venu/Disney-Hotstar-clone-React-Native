@@ -7,6 +7,10 @@ import Search from '../Screens/Search';
 import NewHot from '../Screens/New&Hot';
 import Downloads from '../Screens/Downloads';
 import MySpace from '../Screens/MySpace';
+import DetailedCard from './DetailedCard';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +50,7 @@ function MyTabs() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="New&Hot" component={NewHot} />
       <Tab.Screen name="Downloads" component={Downloads} />
@@ -54,7 +58,18 @@ function MyTabs() {
     </Tab.Navigator>
   );
 }
-
+function HomeStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="home" component={HomeScreen} options =
+      {{headerShown:false
+      }}/>
+      <Stack.Screen name="MovieDetails" component={DetailedCard} options =
+      {{headerShown:false
+      }} />
+    </Stack.Navigator>
+  );
+}
 export default function App() {
   return (
     <NavigationContainer>
