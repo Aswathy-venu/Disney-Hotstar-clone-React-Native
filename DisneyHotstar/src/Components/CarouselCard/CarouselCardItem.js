@@ -9,6 +9,9 @@ export const ITEM_HEIGHT = SLIDER_HEIGHT
 const CarouselCardItem = ({ item, index }) => {
   return (
     <View style={styles.container} key={index}>
+      <View style={styles.heading}>
+       
+      </View>
       <View style={styles.imageContainer}>
         <ImageBackground
           source={{ uri: item.bgImgUrl }}
@@ -36,12 +39,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
     borderRadius: 8,
-    // width: ITEM_WIDTH,
     height:400,
   },
   imageContainer: {
-    // position: 'relative',
   },
+  
   bgimage: {
     width: ITEM_WIDTH,
     height: 300,
@@ -52,20 +54,19 @@ const styles = StyleSheet.create({
     right: 0,
     height:80, 
     bottom:0,
-    // marginTop:230,
     resizeMode: 'contain',
   },
   body: {
     color: 'white',
     fontSize: 18,
     textAlign: 'center',
-    marginTop:30,
+    paddingVertical: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20, 
+    paddingVertical:8,
   },
   subscribeButton: {
     alignItems: 'center',

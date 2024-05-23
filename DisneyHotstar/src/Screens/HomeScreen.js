@@ -1,20 +1,26 @@
-import { StyleSheet, SafeAreaView, View, Dimensions} from 'react-native';
+import { StyleSheet, SafeAreaView,ScrollView, View, Dimensions} from 'react-native';
 import CarouselCards from '../Components/CarouselCard/CarouselCards'
 import Cards from '../Components/Card/Cards'
-
-
+import PopularShows from '../Components/Card/PopularShows'
+import DisneyCards from '../Components/Card/DisneyCard'
+import ShowViews from  '../Components/Card/AsianetShows'
 export default function HomeScreen() {
   return (
+    <ScrollView>
     <SafeAreaView style={styles.container}>
     <CarouselCards />
       <Cards style={styles.image}/>
+      <PopularShows  style={styles.image}/>
+      <DisneyCards  style={styles.image}/>
+      <ShowViews style={styles.image}/>
     </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:'100%',
     backgroundColor: 'black',
   },
 

@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView,Pressable} from 'react-native';
-import {fetchData} from '../Card/Api';
+import {popularData} from '../Card/Api';
 import { useNavigation } from '@react-navigation/native';
-import DetailedCard from '../../Screens/DetailedCard';
 
-const CardView = () => {
+const PopularView = () => {
     const [movies, setMovies] = useState([]);
     const [index, setIndex] = useState(0);
     const navigation = useNavigation();
 
     useEffect(() => {
-        fetchData().then((result) => setMovies(result));
+        popularData().then((result) => setMovies(result));
     }, []);
 
     return (
         <View style={styles.container}>
-        <Text style={styles.body}>Latest Releases</Text>
+        <Text style={styles.body}>Popular Movies</Text>
         <ScrollView horizontal={true}>
         {movies.slice(index, index + 8).map((movie, movieIndex) => (
               <Pressable
               key={movieIndex} 
               onPress={() => navigation.navigate('MovieDetails', { movie })}
-          >
+              >
               <Image
                   source={{ uri: movie.posterURL }}
                   style={styles.image} 
@@ -44,6 +43,7 @@ const styles = StyleSheet.create({
         color:'white',
         left:0,
         bottom:7,
+        paddingVertical:10,
     },
     
     image: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CardView
+export default PopularView
 
 
 

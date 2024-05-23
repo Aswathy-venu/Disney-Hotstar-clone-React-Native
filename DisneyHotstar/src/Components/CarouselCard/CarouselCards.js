@@ -43,7 +43,7 @@ const CarouselCards = () => {
         tappableDots={true}
         containerStyle={{
           backgroundColor: 'black', 
-          paddingVertical: 10,
+          paddingVertical: 40,
           height:"auto"
         
         }}
