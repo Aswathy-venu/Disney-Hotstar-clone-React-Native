@@ -4,7 +4,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Cards from '../Components/Card/Cards'
 
-
 export const SLIDER_WIDTH = Dimensions.get('window').width 
 export const ITEM_WIDTH = SLIDER_WIDTH 
 

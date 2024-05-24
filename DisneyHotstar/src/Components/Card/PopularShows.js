@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView,Pressable} from 'react-native';
-import {popularData} from '../Card/Api';
+import {popularData} from '../Api/Api';
 import { useNavigation } from '@react-navigation/native';
 
 const PopularView = () => {

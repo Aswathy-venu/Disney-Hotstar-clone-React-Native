@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons'; // Import the Icon component
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import HomeScreen from '../Screens/HomeScreen';
 import Search from '../Screens/Search';
 import NewHot from '../Screens/New&Hot';
 import Downloads from '../Screens/Downloads';
 import MySpace from '../Screens/MySpace';
 import DetailedCard from './DetailedCard';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const Tab = createBottomTabNavigator(); 
 const Stack = createNativeStackNavigator();
-
-const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
@@ -21,7 +21,6 @@ function MyTabs() {
         headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-
           switch (route.name) {
             case 'Home':
               iconName = focused ? 'home' : 'home-outline';

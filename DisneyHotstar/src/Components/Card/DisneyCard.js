@@ -3,9 +3,7 @@ import { View, Image, StyleSheet, ScrollView } from 'react-native';
 
 const PopularView = () => {
     return (
-        <ScrollView>
           <View style={styles.container}>
-            <View style={styles.imageContainer}>
                 <Image
                     source={require('../../../assets/disneyog.webp')}
                     style={styles.image}
@@ -18,8 +16,6 @@ const PopularView = () => {
                     source={require('../../../assets/marvel.webp')}
                     style={styles.image}
                 />
-                </View>
-                <View style={styles.imageContainer}>
                 <Image
                     source={require('../../../assets/starwars.jpeg')}
                     style={styles.image}
@@ -33,8 +29,6 @@ const PopularView = () => {
                     style={styles.image}
                 />
             </View>
-            </View>
-        </ScrollView>
     )
 }
 
@@ -42,11 +36,8 @@ const styles = StyleSheet.create({
     container: {
         marginTop: '5%',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-    },
-    imageContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap', 
+        justifyContent: 'space-between',
     },
     image: {
         width: '31%',

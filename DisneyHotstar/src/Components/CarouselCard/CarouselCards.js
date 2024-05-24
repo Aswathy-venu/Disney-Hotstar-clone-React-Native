@@ -11,7 +11,6 @@ const CarouselCards = () => {
   return (
     <View style={styles.container}>
       <Carousel
-        layoutCardOffset={9}
         ref={isCarousel}
         data={data}
         renderItem={CarouselCardItem}//for display the Carousel card items
@@ -34,9 +33,7 @@ const CarouselCards = () => {
           height: 10,
           borderRadius: 5,
           marginHorizontal: 0,
-          backgroundColor: 'white',
-       
-          
+          backgroundColor: 'white', 
         }}
         inactiveDotOpacity={0.3}
         inactiveDotScale={0.6}
@@ -45,10 +42,8 @@ const CarouselCards = () => {
           backgroundColor: 'black', 
           paddingVertical: 40,
           height:"auto"
-        
         }}
       />
- 
     </View>
   )
 }
@@ -59,6 +54,4 @@ const styles = StyleSheet.create({
     height:Dimensions.get('screen').height*0.49
   },
 });
-
-
 export default CarouselCards

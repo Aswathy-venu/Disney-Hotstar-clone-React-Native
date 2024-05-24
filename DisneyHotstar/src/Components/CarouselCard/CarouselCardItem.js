@@ -1,18 +1,14 @@
 import React from 'react'
-import { View, Text, StyleSheet, Dimensions,ImageBackground,Image,Pressable } from "react-native"
+import { View, Text, StyleSheet, Dimensions, ImageBackground, Image, Pressable } from "react-native"
 
-export const SLIDER_WIDTH = Dimensions.get('window').width 
-export const ITEM_WIDTH = SLIDER_WIDTH 
-export const SLIDER_HEIGHT = Dimensions.get('window').height 
-export const ITEM_HEIGHT = SLIDER_HEIGHT 
+export const SLIDER_WIDTH = Dimensions.get('window').width
+export const ITEM_WIDTH = SLIDER_WIDTH
 
 const CarouselCardItem = ({ item, index }) => {
   return (
     <View style={styles.container} key={index}>
-      <View style={styles.heading}>
-       
-      </View>
-      <View style={styles.imageContainer}>
+      <View style={styles.heading} />
+      <View>
         <ImageBackground
           source={{ uri: item.bgImgUrl }}
           style={styles.bgimage}
@@ -39,21 +35,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
     borderRadius: 8,
-    height:400,
+    height: 400,
   },
-  imageContainer: {
-  },
-  
   bgimage: {
     width: ITEM_WIDTH,
     height: 300,
   },
-  image: { 
+  image: {
     position: 'absolute',
     left: 0,
     right: 0,
-    height:80, 
-    bottom:0,
+    height: 80,
+    bottom: 0,
     resizeMode: 'contain',
   },
   body: {
@@ -66,13 +59,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical:8,
+    paddingVertical: 8,
   },
   subscribeButton: {
     alignItems: 'center',
     paddingVertical: 12,
     backgroundColor: 'rgba(250, 247, 251, 0.1)',
-    borderRadius:9,
+    borderRadius: 9,
     width: 200,
   },
   text: {
@@ -85,9 +78,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
     backgroundColor: 'rgba(250, 247, 251, 0.1)',
-    borderRadius:9,
+    borderRadius: 9,
     width: 60,
-    marginLeft:7,
+    marginLeft: 7,
   },
 })
 

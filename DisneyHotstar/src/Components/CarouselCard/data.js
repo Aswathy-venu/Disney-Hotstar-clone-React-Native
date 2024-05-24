@@ -10,7 +10,7 @@ const data = [
         imgUrl:"https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/367/1500367-t-945f7ecb1fbe",
      },
      {
-        body: "Comedy . Family . Dramedy . Dysfunctional Relationships",
+        body: "Comedy . Family . Dramedy . Relationships",
         bgImgUrl: "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/2667/1714673512667-i",
         imgUrl:"https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/5378/1714673495378-t",
      },

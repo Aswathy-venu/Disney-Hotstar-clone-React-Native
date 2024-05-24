@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView,Pressable} from 'react-native';
-import {fetchData} from '../Card/Api';
+import {fetchData} from '../Api/Api';
 import { useNavigation } from '@react-navigation/native';
-import DetailedCard from '../../Screens/DetailedCard';
 
 const CardView = () => {
     const [movies, setMovies] = useState([]);
-    const [index, setIndex] = useState(0);
+    const [index] = useState(0);
     const navigation = useNavigation();
 
     useEffect(() => {
-        fetchData().then((result) => setMovies(result));
+       const getData = async () => {
+            const response = await fetchData()
+            setMovies(response)
+        }
+        getData()
     }, []);
 
     return (
@@ -50,10 +53,8 @@ const styles = StyleSheet.create({
         width: 150,
         height: 200,
         margin: 5,
-        
     },
 });
-
 export default CardView
 
 

@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView,Pressable} from 'react-native';
-import {popularData} from '../Card/Api';
+import {popularData} from '../Api/Api';
 import { useNavigation } from '@react-navigation/native';
 
 const ShowView = () => {
     const [movies, setMovies] = useState([]);
-    const [index, setIndex] = useState(0);
+    const index = useState(0);
     const navigation = useNavigation();
 
     useEffect(() => {
-        popularData().then((result) => setMovies(result));
-    }, []);
+        const getData = async () => {
+             const response = await popularData()
+             setMovies(response)
+         }
+         getData()
+     }, []);
 
     return (
         <View style={styles.container}>
