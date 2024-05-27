@@ -10,6 +10,7 @@ import NewHot from '../Screens/New&Hot';
 import Downloads from '../Screens/Downloads';
 import MySpace from '../Screens/MySpace';
 import DetailedCard from './DetailedCard';
+import { WatchListProvider } from '../Components/Card/FavoriteContext';
 
 const Tab = createBottomTabNavigator(); 
 const Stack = createNativeStackNavigator();
@@ -39,7 +40,6 @@ function MyTabs() {
               break;
           }
 
-          // Return the icon component
           return <Icon name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: 'white',
@@ -63,16 +63,19 @@ function HomeStack() {
       <Stack.Screen name="home" component={HomeScreen} options =
       {{headerShown:false
       }}/>
-      <Stack.Screen name="MovieDetails" component={DetailedCard} options =
+      <Stack.Screen name="movieDetails" component={DetailedCard} options =
       {{headerShown:false
       }} />
     </Stack.Navigator>
   );
 }
+
 export default function App() {
   return (
+    <WatchListProvider>
     <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
+    </WatchListProvider>
   );
 }

@@ -3,7 +3,6 @@ import CarouselCards from '../Components/CarouselCard/CarouselCards'
 import Cards from '../Components/Card/Cards'
 import PopularShows from '../Components/Card/PopularShows'
 import DisneyCards from '../Components/Card/DisneyCard'
-import ShowViews from  '../Components/Card/AsianetShows'
 export default function HomeScreen() {
   return (
     <ScrollView>
@@ -12,7 +11,7 @@ export default function HomeScreen() {
       <Cards style={styles.image}/>
       <PopularShows  style={styles.image}/>
       <DisneyCards  style={styles.image}/>
-      <ShowViews style={styles.image}/>
+      <Cards style={styles.image}/>
     </SafeAreaView>
     </ScrollView>
   );

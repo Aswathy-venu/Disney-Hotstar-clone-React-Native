@@ -19,7 +19,7 @@ const PopularView = () => {
         {movies.slice(index, index + 8).map((movie, movieIndex) => (
               <Pressable
               key={movieIndex} 
-              onPress={() => navigation.navigate('MovieDetails', { movie })}
+              onPress={() => navigation.navigate('movieDetails', { movie })}
               >
               <Image
                   source={{ uri: movie.posterURL }}

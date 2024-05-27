@@ -1,15 +1,18 @@
-import React from 'react'
-import {ScrollView, View, Text, StyleSheet, Dimensions, ImageBackground, Pressable } from "react-native"
+import React,{useContext} from 'react'
+import {ScrollView,TouchableOpacity,View, Text, StyleSheet, Dimensions, ImageBackground, Pressable } from "react-native"
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Cards from '../Components/Card/Cards'
+import { FavoriteContext } from '../Components/Card/FavoriteContext'
 
 export const SLIDER_WIDTH = Dimensions.get('window').width 
 export const ITEM_WIDTH = SLIDER_WIDTH 
 
 const DetailedCard = ({ route }) => {
     const { movie } = route.params;
-
+    const { favorites, toggleFavorite } = useContext(FavoriteContext);
+    const isFavorite = favorites.some((fav) => fav.id === movie.id);
+    
     return (
       <ScrollView>
         <View style={styles.container}>
@@ -30,10 +33,6 @@ const DetailedCard = ({ route }) => {
             </Text>
             <View style={styles.iconContainer}>
                 <View style={styles.iconButton}>
-                    <MaterialCommunityIcons name="plus" size={30} color="white" />
-                    <Text style={styles.iconText}>Watchlist</Text>
-                </View>
-                <View style={styles.iconButton}>
                     <FontAwesome name="share" size={30} color="white" />
                     <Text style={styles.iconText}>Share</Text>
                 </View>
@@ -42,8 +41,10 @@ const DetailedCard = ({ route }) => {
                     <Text style={styles.iconText}>Downloads</Text>
                 </View>
                 <View style={styles.iconButton}>
-                    <FontAwesome name="heart" size={30} color="white" />
-                    <Text style={styles.iconText}>Rate</Text>
+                <TouchableOpacity onPress={() => toggleFavorite(movie)}>
+                    <FontAwesome name="heart" size={30}  color={isFavorite ? 'red' : 'white'} />
+                    <Text style={styles.iconText}>WatchList</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <Cards style={styles.image}/>
