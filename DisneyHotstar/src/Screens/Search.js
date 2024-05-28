@@ -24,7 +24,7 @@ const Search = () => {
        
          .then((responseJson) => {
                setFilteredDataSource(responseJson);
-                setMasterDataSource(responseJson);
+               setMasterDataSource(responseJson);
               })
               .catch((error) => {
                 console.error(error);
@@ -37,7 +37,6 @@ const Search = () => {
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
     if (text) {
-      // Inserted text is not blank
       // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
         // Applying filter for the inserted text in search bar
@@ -72,12 +71,6 @@ const Search = () => {
   );
 };
 
-
-
-  const getItem = (item) => {
-    // Function for click on an item
-    alert('Id : ' + item.id + ' Title : ' + item.title);
-  };
 
   return (
     <SafeAreaView style={styles.container}>

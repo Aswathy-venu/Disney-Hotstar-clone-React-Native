@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState} from 'react';
 
 const FavoriteContext = createContext();
 
@@ -12,7 +12,6 @@ const WatchListProvider = ({ children }) => {
                 : [...prevFavorites, movie]
         );
     };
-
     const numberOfFavoriteMovies = favorites.length;
 
     return (
